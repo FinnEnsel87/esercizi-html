@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Lezione HTML</title>
+    <style>img{max-width:300px;}</style>
+</head>
+<body>
+    <picture>
+        <source media="(min-width:800px)" srcset="/assets/img1.webp" type="image/webp">
+        <source media="(min-width:650px)" srcset="/assets/img1.jpg" type="image/jpeg">
+        <img src="/assets/img1.jpg" alt="descrizione img1 se non si visualizza">
+    </picture>
+    <picture>
+        <source media="(min-width:800px)" srcset="assets/img2.webp" type="image/webp">
+        <source media="(min-width:650px)" srcset="assets/img2.jpg" type="image/jpeg">
+        <img src="assets/img2.jpg" alt="descrizione img2 se non si visualizza">
+    </picture>
+</body>
+</html>
+<!-- style ha imposto una larghezza max di 300px ma se cambiano i px del viewport vengono usate immagini diverse, fino a min-width di 650px. In quel caso c'è img di fallback  -->
