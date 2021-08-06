@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Lezione HTML-Esercizio Form</title>
+	<style>
+		label {
+			display: block
+		}
+	</style>
+</head>
+<!-- i valori dell'attributo name: vengono inviati al server con method POST -->
+<body>
+	<form action="http://www.platform.finto" method="POST">
+		<section class="data-user">
+			<h2>USER'S DATA</h2>
+			<div id="email">
+				<label for="email">Email:</label>
+				<input id="email" type="email" name="mail" placeholder="nome@sample.com" required>
+			</div>
+			<div id="pass">
+				<label for="pass">Password:</label>
+				<input id="pass" type="password" name="password" placeholder="Minimo 6 caratteri" minlength="6" required>
+			</div>
+			<div id="name-surname">
+				<label for="name-surname">Nome e Cognome:</label>
+				<input id="name-surname" type="text" name="name" placeholder="Nome" minlength="4">
+				<input id="name-surname" type="text" name="surname" placeholder="Cognome" minlength="4" required>
+			</div>
+			<div id="date">
+				<label for="date">Data di Nascita:</label>
+				<input id="date" type="date" name="birth-date">
+			</div>
+			<div id="tel-num">
+				<label for="tel-num">Numero di Telefono:</label>
+				<input id="tel-num" type="tel" id="tel-num" name="tel-num" placeholder="Cellulare" required>
+			</div>
+		</section><br>
+		
+		<fieldset>
+			<legend>TIPO DI ABBONAMENTO</legend>
+			
+			<div class="subscription">
+				<Label for="subscription">Piano di abbonamento</Label>
+				<select id="subscription" name="type-subscription" required>
+					<option value="free">FREE</option>
+					<optgroup label="A pagamento">
+						<option value="1">0.99€ al mese</option>
+						<option value="5">4.99€ al mese</option>
+						<option value="20">19.99€ al mese</option>
+					</optgroup>
+				</select>
+			</div><br>
+			<div class="pro">
+				<label for="pro">Abbonamento PRO</label>
+				<input type="checkbox" id="pro" name="sub-pro" value="sub-pro">
+			</div>
+		</fieldset><br>
+		<fieldset>
+            <!-- AGGIUNTO SOLO PATTERN MA NON HO TROVATO SINTASSI IN GRAFFE -->
+			<legend>CARTA</legend>
+			<div id="card">
+				<label for="card">Numero carta:</label>
+				<input type="text" id="card" name="CC" maxlength="16" placeholder="1111-2222-3333-4444" pattern="[0-9]{13,16}" required>
+			</div>
+			<div id="cvc">
+				<label for="cvc-card">CVC</label>
+				<input id="cvc-card" type="text" name ="cvc-cc" maxlength="3" placeholder="000" pattern="[0-9]{3}" required>
+			</div>
+			<div id="card-exp">
+				<label for="expiration">SCADENZA</label>
+				<input type="date" id="expiration" name="card-exp" required>
+			</div><br><br>
+			<div id="bill-address">
+				<label for="address-bill">Indirizzo di FATTURAZIONE:</label>
+				<input type="text" id="address-bill" name="form-address" placeholder="es. Piazza Garibaldi 1" required>
+			</div>
+		</fieldset><br>
+		<button type="submit" >Abbonati</button>
+	</form>
+</body>
+
+</html>
